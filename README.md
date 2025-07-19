@@ -12,13 +12,6 @@ A simple and intuitive React app to manage student names and their attendance st
 - Mark students as **Present** or **Absent**
 - Clear visual UI with status separation (optional enhancement)
 
----
-
-## 📸 Preview
-
-> _(You can include a screenshot or GIF here in the future)_
-
----
 
 ## 🛠️ Tech Stack
 
