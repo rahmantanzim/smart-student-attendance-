@@ -1,0 +1,117 @@
+/* Global reset and font */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.student-form {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.student-form input {
+  padding: 10px;
+  flex: 1;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.student-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.student-form button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student-form button:hover {
+  background-color: #0056b3;
+}
+
+.student-list, .student-present, .student-absent {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f1f5f9;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+li:hover {
+  background: #e2e8f0;
+}
+
+li button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+li button:nth-child(2) {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+li button:nth-child(3) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+li button:nth-child(4) {
+  background-color: #28a745;
+  color: #fff;
+}
+
+li button:nth-child(5) {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+li button:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
