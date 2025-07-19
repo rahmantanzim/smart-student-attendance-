@@ -1,4 +1,4 @@
-# Student Manager 🧑‍🎓📋
+# Smart Student Attendance 🧑‍🎓📋
 
 A simple and intuitive React app to manage student names and their attendance status. Built for practice and learning React concepts like `useState`, event handling, conditional rendering, and list operations.
 
