@@ -95,36 +95,13 @@ const Students = () => {
   const studentList = () => {
     return students.map((student) => {
       return (
-        <li key={student.id}>
+        <li key={student.id}
+        className={`student-item ${student.isPresent ? "present" : "absent"}`}>
           {student.name}
-          <button
-            onClick={() => {
-              editHandler(student);
-            }}
-          >
-            Edit
-          </button>
-          <button
-            onClick={() => {
-              deleteHandler(student.id);
-            }}
-          >
-            Delete
-          </button>
-          <button
-            onClick={() => {
-              handlePresent(student);
-            }}
-          >
-            Make Present
-          </button>
-          <button
-            onClick={() => {
-              handleAbsent(student);
-            }}
-          >
-            Make Absent
-          </button>
+          <button className="btn edit-btn" onClick={() => editHandler(student)}>Edit</button>
+          <button className="btn delete-btn" onClick={() => deleteHandler(student.id)}>Delete</button>
+          <button className="btn present-btn" onClick={() => handlePresent(student)}>Make Present</button>
+          <button className="btn absent-btn" onClick={() => handleAbsent(student)}>Make Absent</button>
         </li>
       );
     });
@@ -156,9 +133,9 @@ const Students = () => {
             })
             .map((presentStudent) => {
               return (
-                <li>
+                <li className="student-status-item">
                   {presentStudent.name}
-                  <button onClick={()=>{handleToggle(presentStudent)}}>Accidentally Added</button>
+                  <button className="btn toggle-btn" onClick={() => handleToggle(presentStudent)}>Accidentally Added</button>
                 </li>
               );
             })}
@@ -173,9 +150,9 @@ const Students = () => {
             })
             .map((presentStudent) => {
               return (
-                <li>
+                <li className="student-status-item">
                   {presentStudent.name}
-                  <button onClick={()=>{handleToggle(presentStudent)}}>Accidentally Added</button>
+                  <button className="btn toggle-btn" onClick={() => handleToggle(presentStudent)}>Accidentally Added</button>
                 </li>
               );
             })}
