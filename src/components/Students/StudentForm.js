@@ -1,4 +1,8 @@
-const StudentForm = ({students, setStudents,studentName,setStudentName,editable,setEditable,editableStudent}) => {
+import { useContext } from "react";
+import { StudentContext } from "../../contexts/Student";
+
+const StudentForm = () => {
+      const {students, setStudents,studentName,setStudentName,editable,setEditable,editableStudent} = useContext(StudentContext)
       const handleStudentName = (e) => {
         setStudentName(e.target.value);
       };

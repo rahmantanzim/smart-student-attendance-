@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StudentContext } from '../../contexts/Student';
 
-const PresentStudent = ({students,handleToggle}) => {
+const PresentStudent = ({handleToggle}) => {
+  const {students} = useContext(StudentContext)
   return (
     <div><div className="student-present">
         <h2>Present Students</h2>

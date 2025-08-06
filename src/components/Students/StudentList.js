@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StudentContext } from '../../contexts/Student';
 
-const StudentList = ({students,setStudents,setEditable,setEditableStudent,setStudentName}) => {
+const StudentList = () => {
+  const {students,setStudents,setEditable,setEditableStudent,setStudentName} = useContext(StudentContext);
   const studentList = () => {
     const editHandler = (student) => {
     setEditable(true);
