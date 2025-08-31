@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { StudentContext } from '../../contexts/Student';
 
-const AbsentStudent = ({handleToggle}) => {
-    const {students} = useContext(StudentContext)
+const AbsentStudent = () => {
+    const {students,handleToggle} = useContext(StudentContext);
   return (
     <div className="student-absent">
         <h2>Absent Students</h2>
