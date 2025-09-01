@@ -3,9 +3,7 @@ import { StudentContext } from "../../contexts/Student";
 
 const StudentForm = () => {
   const {
-    students,
-    studentName,
-    editable,
+    studentState,
     handleFormSubmit,
     handleStudentName,
   } = useContext(StudentContext);
@@ -17,13 +15,13 @@ const StudentForm = () => {
           type="text"
           id="name"
           name="name"
-          value={studentName}
+          value={studentState.studentName}
           onChange={handleStudentName}
           placeholder="Add a student"
         />
-        <button type="submit">{editable ? "Update" : "Submit"}</button>
+        <button type="submit">{studentState.editable ? "Update" : "Submit"}</button>
       </form>
-      {students.length === 0 && <p className="not-found">No Student Found </p>}
+      {studentState.students.length === 0 && <p className="not-found">No Student Found </p>}
     </>
   );
 };

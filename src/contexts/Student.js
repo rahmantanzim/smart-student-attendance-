@@ -1,13 +1,6 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 
 export const StudentContext = createContext();
-
-const initialValue = {
-  students: [],
-  studentName: '',
-  editable: false,
-  editableStudent: null
-}
 
 const studentReducer = (state,action)=>{
   switch(action.type){
@@ -49,7 +42,7 @@ const studentReducer = (state,action)=>{
           }
           return student;
         }),
-        editable: true,
+        editable: false,
         editableStudent: null,
         studentName: ''
       } 
@@ -77,9 +70,16 @@ const studentReducer = (state,action)=>{
     default: {
       return state;
     }
-    
-  
-}}
+  }
+}
+
+const initialValue = {
+  students: [],
+  studentName: '',
+  editable: false,
+  editableStudent: null
+}
+
 
 const StudentProvider = ({ children }) => {
   const [studentState, dispatch] = useReducer(studentReducer,initialValue);
@@ -99,13 +99,13 @@ const StudentProvider = ({ children }) => {
   };
 
   const makePresentHandler = (student) =>{
-    if(student.isPresent !== null){
+    if(student.isPresent !== undefined){
       return alert(`This student is already in the ${student.isPresent ? 'Present' : 'Absent' } list`)
     }
     dispatch({type:'change_status_of_student', payload: {id:student.id, isPresent: true}})
   }
   const makeAbsentHandler = (student) =>{
-    if(student.isPresent !== null){
+    if(student.isPresent !== undefined){
       return alert(`This student is already in the ${student.isPresent ? 'Present' : 'Absent' } list`)
     }
     dispatch({type:'change_status_of_student', payload: {id:student.id, isPresent: false}})

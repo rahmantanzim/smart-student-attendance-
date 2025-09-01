@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import { StudentContext } from '../../contexts/Student';
 
 const AbsentStudent = () => {
-    const {students,handleToggle} = useContext(StudentContext);
+      const {studentState,handleToggle} = useContext(StudentContext);
   return (
     <div className="student-absent">
         <h2>Absent Students</h2>
         <ul>
-          {students
+          {studentState.students
             .filter((student) => {
               return student.isPresent === false;
             })
